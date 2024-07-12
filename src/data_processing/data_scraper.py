@@ -54,7 +54,3 @@ def scrape_b3_data(output_file='data.parquet'):
     data_frame.to_parquet(output_file)
 
     return output_file
-
-
-if __name__ == "__main__":
-    scrape_b3_data()
