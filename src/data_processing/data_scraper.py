@@ -1,5 +1,6 @@
 import pandas as pd
 import time
+from datetime import date
 from selenium import webdriver
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
@@ -35,7 +36,8 @@ def scrape_b3_data(output_file='data.parquet'):
                 'action_type': cells[3].text,
                 'theoretical_quantity': cells[4].text,
                 'sector_percentage': cells[5].text,
-                'accumulated_percentage': cells[6].text
+                'accumulated_percentage': cells[6].text,
+                'date': date.today()
             }
 
             data.append(row_data)

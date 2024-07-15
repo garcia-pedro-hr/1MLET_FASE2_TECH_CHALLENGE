@@ -1,6 +1,6 @@
 import os
 import boto3
-import datetime
+from datetime import datetime, date
 from botocore.exceptions import NoCredentialsError, ClientError
 from dotenv import load_dotenv
 
@@ -20,7 +20,7 @@ def upload_to_s3(local_file, bucket, object_name=None, prefix=None):
 
     s3 = session.client('s3')
 
-    s3_file_path = f'B3/{datetime.date.today()}/data.parquet'
+    s3_file_path = f'raw_zone/b3/{date.today()}/b3_{str(datetime.now()).replace(' ','_')}.parquet'
 
     try:
         s3.upload_file(local_file, bucket, s3_file_path)
