@@ -34,9 +34,9 @@ def scrape_b3_data(output_file='data.parquet'):
                 'code': cells[1].text,
                 'action': cells[2].text,
                 'action_type': cells[3].text,
-                'theoretical_quantity': cells[4].text,
-                'sector_percentage': cells[5].text,
-                'accumulated_percentage': cells[6].text,
+                'theoretical_quantity': cells[4].text.replace('.', ''),
+                'sector_percentage': cells[5].text.replace(',', '.'),
+                'accumulated_percentage': cells[6].text.replace(',', '.'),
                 'date': date.today()
             }
 

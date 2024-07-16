@@ -1,5 +1,5 @@
 import os
-from src.data_processing.data_scraper import scrape_b3_data
+from src.data_processing.data_scrapper import scrape_b3_data
 from src.data_processing.data_uploader import upload_to_s3
 
 
